@@ -12,7 +12,7 @@
 <body>
     <div class="Top_bar">
         <!-- 탑바 내용 -->
-        <a href="클릭시 메인페이지로 이동">
+        <a href="../main/main.php">
             <img class="logo" src="../img/pf .png" alt="none">
         </a>
         
