@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'SKYBORI';
+    src: url('../font/SKYBORI.ttf') format('opentype');
+    
+}
+
+body{
+    font-family: 'SKYBORI';
+    margin: 0;
+    padding: 0;
+    background: url('../img/ai.png') center/cover no-repeat fixed;
+    
+}
+
+body::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0)); /* 그라데이션 */
+}
+
+.Top_bar{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 1;
+}
+
+.logo{
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.Top_bar a{
+    text-decoration: none;
+    font-weight:bold;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+.TopBar_middle{
+    margin: auto;
+}
+.TopBar_middle a{
+    margin-right: 60px;
+}
+
+.TopBar_right a{
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+.image_container{
+    text-align: center;
+}
+
+.AI_image{
+    border: 4px solid rgb(255, 255, 255);
+}
+
+
+
