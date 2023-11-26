@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'SKYBORI';
+    src: url('../font/SKYBORI.ttf') format('opentype');
+    
+}
+body{
+    font-family: 'SKYBORI';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Top_bar{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.logo{
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.Top_bar a{
+    text-decoration: none;
+    font-weight:bold;
+    color: rgb(21, 22, 22);
+    font-size: 40px;
+}
+
+.TopBar_middle{
+    margin: auto;
+}
+.TopBar_middle a{
+    margin-right: 60px;
+}
+
+.TopBar_right a{
+    font-size: 25px;
+    margin-right: 25px;
+}
