@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ai.css">
+    <script src="ai.js"></script>
 
 
 </head>
@@ -29,15 +30,22 @@
     </div>
 
     <h1 class="font_a">Species AI</h1>
-    <h3 class="font_b">나의 반려동물의 종을 판별해보세요!</h3>
+    <h3 class="font_b">나의 반려동물의 종을 판별해보세요!</h3> 
     
     <div class="image_container">
-        <img src="../img/aiimage.jpg" class="AI_image" alt="이미지 없음">
+        <img src="../img/white.png" class="AI_image" id="AI_image" alt="이미지 없음"> <!--TODO:판별 후 이미지 동적으로 받아야함(판별 버튼 누르기 전까지는 하얀화면 유지, 현재 하얀색 화면 이미지 주소 들어가 있음)-->
     </div>
 
+    <h1 class="font_c">당신의 반려동물은 DOG 입니다.</h1> <!--TODO:판별 후 텍스트 동적으로 받아야함(판별전에는 텍스트가 없음)-->
+
     <form action="ai판별후 이미지화면" name="ai_image" method="post" >
-        <button type="submit">판별</button>
+        <button type="submit">분석</button>
     </form>
+
+    <form name="ai_image"  method="post">
+        <input type="file" id="input_image">
+    </form>
+    
 </body>
 
 </html>

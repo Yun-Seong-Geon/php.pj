@@ -14,7 +14,7 @@ body{
 
 body::before {
     content: "";
-    position: absolute; 
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
@@ -81,5 +81,14 @@ body::before {
     font-family: sans-serif;
     color: white;
     margin-top: 0;
+    margin-bottom:40px;
     text-align: center;
+}
+
+.font_c{
+    font-size: 60px;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    margin-top: 70px;
 }
