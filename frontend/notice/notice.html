@@ -9,7 +9,89 @@
 <body>
     <h1 class="notice_text">공지사항</h1>
     <div class="notice_container">
-        
+        <div class="search_container">
+            <select class="select_box">
+                <option>제목</option>
+                <option>글쓴이</option>
+            </select>
+
+            <input class="select_box" type="text" name="search_input" placeholder="검색어를 입력하세요" style="width: 600px;"> 
+
+            <button type="button" class="search-button">
+                <img src="../img/검색 아이콘.png" alt="검색" class="search-icon">
+            </button>
+        </div>
+
+        <div class="board_list_wrap">
+            <table class="board_list">
+                <thead>
+                    <tr>
+                        <th>순번</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">집에 가고싶다다다다다다다다다ㅏ다다다다닫</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">피시방 가고싶다다다다다다ㅏ다다닫</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>234</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">노래방 가고싶다</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>456</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">당구치러 가고싶다</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>678</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">풋살하고 싶다</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>890</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <div class="paging">
+                <a href="첫페이지로 이동" class="bt">첫번째 페이지</a>
+                <a href="1페이지" class="num on">1</a>
+                <a href="2페이지" class="num">2</a>
+                <a href="3페이지" class="num">3</a>
+                <a href="마지막 페이지로 이동" class="bt">마지막 페이지</a>
+            </div>
+        </div>
     </div>
+
+    
 </body>
 </html>
