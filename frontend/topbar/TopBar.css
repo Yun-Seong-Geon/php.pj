@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'SKYBORI';
-    src: url('../font/SKYBORI.ttf') format('opentype');
+    src: url('../../font/SKYBORI.ttf') format('opentype');
     
 }
 body{
@@ -31,9 +31,11 @@ body{
 
 .TopBar_middle{
     margin: auto;
+    margin-right: 270px; 
+    /* TODO 마진값 수정 */
 }
 .TopBar_middle a{
-    margin-right: 60px;
+    margin-right: 70px;
 }
 
 .TopBar_right a{

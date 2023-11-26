@@ -16,6 +16,7 @@
             </a>
         </div>
     </div>
+    
     <form class="join_form" method = 'post' action = '../signup/signup_process.php'>
 
         
@@ -43,7 +44,7 @@
             </div>
 
             <div class="submit-sign">
-                <button type="submit">회원가입</button> <!--TODO:js파일에서 회원가입 성공시 메인페이지 연결해야함-->
+                <button type="submit">회원가입</button>
             </div>
 
 
