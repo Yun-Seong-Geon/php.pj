@@ -1,40 +1,74 @@
-<?php
-include '../topbar/topbar.php';
-?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ai.css">
-
-
 </head>
-
 <body>
-    <!-- <div class="Top_bar">
-        <a href="클릭시 메인페이지로 이동">
-            <img class="logo" src="../img/pf .png" alt="none">
-        </a>
-        
-        <div class="TopBar_middle">
-            <a href="클릭시 PF페이지로 이동">PF</a>
-            <a href="클릭시 게시판으로 이동">게시판</a>
-            <a href="클릭시 공지사항으로 이동">공지사항</a>
-            <a href="클릭시 AI 판별 페이지로 이동">AI</a>
+    <?php include '../topbar/topbar.php'; ?>
+
+    <h1 class="font_a">Species AI</h1>
+    <h3 class="font_b">나의 반려동물의 종을 판별해보세요!</h3>
+
+    <?php
+    session_start();
+
+    // 결과가 세션에 저장되어 있는지 확인
+    if (isset($_SESSION['prediction_result'])) {
+        $response_data = $_SESSION['prediction_result'];
+
+        // 처리된 이미지 표시
+        if (isset($_SESSION['uploaded_image'])) {
+            echo '<div class="image_container">';
+            echo '<img src="' . $_SESSION['uploaded_image'] . '" alt="Processed Image" class="AI_image">';
+            echo '</div>'; // 이 부분을 닫는 div 태그로 옮겼습니다.
+        }
+
+        // 결과 표시
+        if (isset($response_data['prediction'])) {
+            echo "<p class='font_b'>당신의 반려동물은 " . htmlspecialchars($response_data['prediction']) . "입니다.</p>";
+        } else {
+            echo "<p class='font_b'>분류 결과를 받지 못했습니다.</p>";
+        }
+
+        // 세션 데이터 제거
+        unset($_SESSION['prediction_result']);
+        unset($_SESSION['processed_image']);
+    } else {
+        // 이미지 업로드 폼 표시
+        ?>
+        <div class="image_container">
+            <img src="../img/aiimage.jpg" id="default_image" class="AI_image" alt="이미지 없음">
+            <img id="image_preview" class="AI_image" alt="이미지 미리보기" style="display: none;">
         </div>
 
-        <div class="TopBar_right">
-            <a href="클릭시 로그인 페이지로 이동">로그인</a>
-            <a href="클릭시 회원가입 페이지로 이동">회원가입</a>
-        </div>
-    </div> -->
-    
-    <div class="image_container">
-        <img src="../img/aiimage.jpg" class="AI_image" alt="이미지 없음">
-    </div>
+        <form action="../ai/ai_process.php" name="ai_image" method="post" enctype="multipart/form-data">
+            <div class="image_container">
+                <input type="file" name="image" id="image_input" accept="image/*" required>
+            </div>
+            <button type="submit">판별</button>
+        </form>
+
+        <script>
+            document.getElementById('image_input').addEventListener('change', function(event) {
+                if (event.target.files && event.target.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById('default_image').style.display = 'none';
+                        var output = document.getElementById('image_preview');
+                        output.src = e.target.result;
+                        output.style.display = 'block';
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                } else {
+                    document.getElementById('default_image').style.display = 'block';
+                    document.getElementById('image_preview').style.display = 'none';
+                }
+            });
+        </script>
+        <?php
+    }
+    ?>
 </body>
-
 </html>
-

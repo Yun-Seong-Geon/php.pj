@@ -57,8 +57,10 @@ body::before {
     margin-right: 25px;
 }
 
-.image_container{
+.image_container,.p{
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .AI_image{
