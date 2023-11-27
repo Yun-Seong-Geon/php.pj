@@ -38,13 +38,13 @@ if ($pw !== $repass) {
 $passwordHash = password_hash($pw, PASSWORD_DEFAULT);
 
 // SQL 쿼리 준비
-$sql = "INSERT INTO users (username, password_hash, name) VALUES (?, ?, ?)";
-
+$sql = "INSERT INTO users (username, password_hash, name, role) VALUES (?, ?, ?, ?)";
+$role = 'user';
 // 준비된 명령문 사용
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $id, $passwordHash, $name);
+$stmt->bind_param("ssss", $id, $passwordHash, $name, $role);
 $stmt->execute();
-
+$role = 'user';
 if ($stmt->affected_rows > 0) {
     echo "회원가입 성공";
     // 로그인 페이지나 메인 페이지로 리디렉션
