@@ -38,6 +38,7 @@ body::before {
     margin: auto;
     margin-bottom: 130px;
     padding: 25px;
+    border-radius: 10px;
 }
 
 .search_container{

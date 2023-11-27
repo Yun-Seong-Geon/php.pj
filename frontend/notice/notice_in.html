@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="notice.css">
-    
+    <link rel="stylesheet" href="notice_in.css">
+
 </head>
+
 <body>
     <h1 class="notice_text">공지사항</h1>
     <div class="notice_container">
-        <div class="search_container">
-            <select class="select_box">
-                <option>제목</option>
-                <option>글쓴이</option>
-            </select>
-
-            <input class="select_box" type="text" name="search_input" placeholder="검색어를 입력하세요" style="width: 600px;"> <!--TODO:검색 input box php 연결해야함-->
-
-            <button type="button" class="search-button">
-                <img src="../img/검색 아이콘.png" alt="검색" class="search-icon"> <!--TODO:버튼 누르면 검색-->
-            </button>
-
+        <div class="top-containter">
+            <h2 clss="'top-h2" style="margin-left: 20px;">게시물 제목 여기다가 게시</h2>
+            <div class="top-h5">
+                <h5 class="top-text" style="display: inline;">등록인</h5>
+                <h5 style="display: inline;">관리자</h5>
+                <h5 class="top-text" style="display: inline;">글번호</h5>
+                <h5 style="display: inline;">123</h5>
+                <h5 class="top-text" style="display: inline;">작성일</h5>
+                <h5 style="display: inline;">2023-08-24</h5>
+                <h5 class="top-text" style="display: inline;">조회</h5>
+                <h5 style="display: inline;">485</h5>
+            </div>
         </div>
 
-            <div class="paging">
-                <a href="첫페이지로 이동" class="bt">첫번째 페이지</a>
-                <a href="1페이지" class="num on">1</a> <!--TODO:동적으로 받아야함-->
-                <a href="2페이지" class="num">2</a> <!--TODO:동적으로 받아야함-->
-                <a href="마지막 페이지로 이동" class="bt">마지막 페이지</a>
+        <div class="text-container">
+            <div class="text_gap">
+                <p>강의명 메타버스
+                <p>
+                <p>강의시간: 매주 목요일
+                <p>
+                <p>강의 내용: 유니티 및 기초</p>
+                <p>학점 : 상대평가
+                <p>
+                <p>집에 가고 싶다 집에 가고싶다 집에 가고싶다
+                <p>
+                <p>집에 가고 싶다 집에 가고싶다 집에 가고싶다
+                <p>
+                <p>집에 가고 싶다 집에 가고싶다 집에 가고싶다
+                
+
             </div>
+        </div>
+
+        <div class="next-page">
+            <a href="이전 글로 이동" class="bt">이전글</a>
+            <a href="coummunity-notice 페이지로 이동" class="bt" style="padding: 10px 30px;">목록</a>
+            <a href="다음 글로 이동" class="bt">다음글</a>
         </div>
     </div>
 
-    
+
 </body>
+
 </html>
