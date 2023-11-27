@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="board.css">
+    
+</head>
+<body>
+    <h1 class="notice_text">게시판</h1>
+    <div class="notice_container">
+        <div class="search_container">
+            <select class="select_box">
+                <option>제목</option>
+                <option>글쓴이</option>
+            </select>
+
+            <input class="select_box" type="text" name="search_input" placeholder="검색어를 입력하세요" style="width: 600px;"> <!--TODO:검색 input box php 연결해야함-->
+
+            <button type="button" class="search-button">
+                <img src="../img/검색 아이콘.png" alt="검색" class="search-icon"> <!--TODO:버튼 누르면 검색-->
+            </button>
+
+        </div>
+
+        <div class="board_list_wrap">
+            <table class="board_list">
+                <thead>
+                    <tr>
+                        <th>순번</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</thq>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td> <!--TODO:동적으로 받아야함-->
+                        <td class="tit"> <!--TODO:동적으로 받아야함-->
+                            <a href="제목 클릭시.html">나는 동물 시러요 AI가 더 조아요</a><!--TODO:클릭시 해당 공지사항 페이지로 이동-->
+                        </td>
+                        <td>윤딕건</td> <!--TODO:동적으로 받아야함-->
+                        <td>2022-08-24</td> <!--TODO:동적으로 받아야함-->
+                        <td>123</td> <!--TODO:동적으로 받아야함-->
+                    </tr>
+                    <!-- <tr>
+                        <td>2</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">피시방 가고싶다다다다다다ㅏ다다닫</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>234</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">노래방 가고싶다</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>456</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">당구치러 가고싶다</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>678</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="tit">
+                            <a href="제목 클릭시.html">풋살하고 싶다</a>
+                        </td>
+                        <td>관리자</td>
+                        <td>2022-08-24</td>
+                        <td>890</td>
+                    </tr>--> <!-- TODO:동적으로 받아야 하는 부분이라 주석처리함 주석 풀면 예시 보임-->
+                </tbody>
+            </table>
+
+            <div class="button_container">
+                <a href="board_update.php" class="board_update">글쓰기</a>
+                <a href="board_write.php" class="board_write">수정하기</a>
+            </div>
+    
+            <div class="paging">
+                <a href="1페이지" class="num on">1</a> <!--TODO:동적으로 받아야함-->
+                <a href="2페이지" class="num">2</a> <!--TODO:동적으로 받아야함-->
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
