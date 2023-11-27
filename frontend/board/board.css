@@ -183,9 +183,10 @@ a {
 .board_write{
     border: 1px solid#535353;
     border-radius: 100px;
-    padding: 10px 50px;
+    padding: 11px 25px;
     color: #ffffff;
     background-color: #535353;
+    font-size: 20px;
 }
 
 .board_update{
