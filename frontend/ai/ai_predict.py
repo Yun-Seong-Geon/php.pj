@@ -17,25 +17,6 @@ def preprocess(image):
     image = tf.image.resize(image, [256, 256]) / 255.0
     return image
 
-from fastapi import FastAPI, UploadFile, File
-from tensorflow import keras
-import numpy as np
-import tensorflow as tf
-import tensorflow_hub as hub
-from PIL import Image
-import io
-import os
-import requests
-app = FastAPI()
-
-FILE_ID = "1MN_hfzw78DVWT0JSPauIVLlzy7L4Wr2R"
-MODEL_PATH = 'model.h5'
-MODEL_URL = f"https://drive.google.com/uc?export=download&id={FILE_ID}"
-
-def preprocess(image):
-    image = tf.image.resize(image, [256, 256]) / 255.0
-    return image
-
 
 class ModelSingleton:
     _instance = None
