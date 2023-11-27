@@ -177,13 +177,13 @@ a {
     bottom: 0;
     position: absolute;
     margin-bottom: 80px;
-    margin-left: 71.5%;
+    margin-left: 76%;
 }
 
 .board_write{
     border: 1px solid#535353;
     border-radius: 100px;
-    padding: 10px 14px;
+    padding: 10px 50px;
     color: #ffffff;
     background-color: #535353;
 }
