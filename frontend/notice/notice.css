@@ -25,10 +25,7 @@ body::before {
 
 .notice_text{
     color: white;
-    margin-top: 150px;
     font-size: 80px;
-    margin-left: 150px;
-    margin-bottom: 20px;
 }
 
 .notice_container{
@@ -171,4 +168,19 @@ a {
 .board_list_wrap .paging a.num.on { /*해당 페이지일 떄 숫자 박스에 대한 css*/
     background: gray;
     color: #fff;
+}
+
+.paging {
+    text-align: center; /* 가운데 정렬 */
+}
+
+.paging a {
+    display: inline-block;
+    margin: 0 5px; /* 링크 간격 조절 */
+    text-decoration: none;
+    color: #000; /* 링크 색상 */
+}
+
+.paging a.on {
+    font-weight: bold; /* 현재 페이지에 해당하는 링크 강조 */
 }
