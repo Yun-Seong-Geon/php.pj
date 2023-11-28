@@ -19,7 +19,7 @@ if (isset($_POST['delete_post']) && isset($_POST['post_id'])) {
 
     // 로그인 상태 확인
     if (!isset($_SESSION['user_id'])) {
-        echo "로그인이 필요합니다.";
+        header("Location: ../login/login.php");
         exit;
     }
 
@@ -31,6 +31,7 @@ if (isset($_POST['delete_post']) && isset($_POST['post_id'])) {
     $stmt->execute();
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
+        
         if ($row['author'] == $_SESSION['user_name']) {
             // 게시글 삭제 쿼리 실행
             $deleteQuery = "DELETE FROM pf WHERE id = ?";
@@ -39,21 +40,19 @@ if (isset($_POST['delete_post']) && isset($_POST['post_id'])) {
             $deleteStmt->execute();
 
             if ($deleteStmt->affected_rows > 0) {
-                echo "게시글이 삭제되었습니다.";
+                header("Location: ../pf/pf.php?status=success");
             } else {
-                echo "게시글 삭제에 실패했습니다.";
+                header("Location: ../pf/pf.php?status=fail");
             }
+            $deleteStmt->close();
         } else {
-            echo "자신이 작성한 게시글만 삭제할 수 있습니다.";
+            header("Location: ../pf/pf.php?status=unauthorized");
         }
     } else {
-        echo "게시글을 찾을 수 없습니다.";
+        header("Location: ../pf/pf.php?status=notfound");
     }
-
-    $stmt->close();
     $conn->close();
-
-    header("Location: ../pf/pf.php");
     exit();
 }
+
 ?>

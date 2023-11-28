@@ -101,6 +101,7 @@ body::before {
     margin-left: 36.3%;
     gap: 14.3%;
     text-align: center;
+    margin-bottom: 3%;
 }
 
 .submit_bt{
@@ -127,8 +128,8 @@ body::before {
 
 .re_container{
     display: flex;
-    margin-top: 2%;
     margin-left: 57.5%;
+    margin-bottom : 3%;
 }
 
 

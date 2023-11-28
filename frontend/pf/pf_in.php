@@ -84,16 +84,19 @@ $conn->close();
                                 <div class="user_container">
                                     <div class="user_name">
                                     <div class="nick_name"><?php echo $author; ?></div>
-                                    <form  id = "delete_pf"action="../pf/pf_in_process.php" method="post">
+                                    <form  id = "delete_pf"action="../pf/pf_in_process.php" method = "post">
                                         <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                                        <a href="#" name = 'delete_post'onclick="deletePost()" class="delete_text">게시물 삭제</a><!--TODO:동적으로 받아야함 -->
-                                        <script>
-                                            function deletePost() {
-                                                document.getElementById('delete_pf').submit()
-                                                alert('게시물이 삭제되었습니다.');
-                                            }
-                                        </script>
+                                        <a href="#" name = 'delete_post' onclick= "deletePost()" class="delete_text">게시물 삭제</a>
+                    
                                     </form>
+                                    <script>
+                                                function deletePost() {
+                                                    var result = confirm('게시물을 삭제하시겠습니까?');
+                                                    if (result) {
+                                                        document.getElementById('delete_pf').submit();
+                                                    }
+                                                }
+                                        </script>
                                     </div>
                                 </div>
                             </header>

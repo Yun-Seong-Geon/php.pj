@@ -27,7 +27,10 @@
 
         // 결과 표시
         if (isset($response_data['prediction'])) {
-            echo "<p class='font_b'>당신의 반려동물은 " . htmlspecialchars($response_data['prediction']) . "입니다.</p>";
+            echo "<p class='font_c'>당신의 반려동물은 " . htmlspecialchars($response_data['prediction']) . "입니다.</p>";
+            echo '<div class="re_container">
+                    <a href="../ai/ai.php" class="re_bt">다시하기</a>
+                    </div>';
         } else {
             echo "<p class='font_b'>분류 결과를 받지 못했습니다.</p>";
         }
@@ -39,15 +42,15 @@
         // 이미지 업로드 폼 표시
         ?>
         <div class="image_container">
-            <img src="../img/aiimage.jpg" id="default_image" class="AI_image" alt="이미지 없음">
+            <img src="../img/white.png" id="default_image" class="AI_image" alt="">
             <img id="image_preview" class="AI_image" alt="이미지 미리보기" style="display: none;">
         </div>
 
         <form action="../ai/ai_process.php" name="ai_image" method="post" enctype="multipart/form-data">
-            <div class="image_container">
+            <div class="bt_container">
                 <input type="file" name="image" id="image_input" accept="image/*" required>
+                <button type="submit" class="submit_bt">분석</button>
             </div>
-            <button type="submit">판별</button>
         </form>
 
         <script>
