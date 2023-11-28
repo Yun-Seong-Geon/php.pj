@@ -22,7 +22,7 @@
         if (isset($_SESSION['uploaded_image'])) {
             echo '<div class="image_container">';
             echo '<img src="' . $_SESSION['uploaded_image'] . '" alt="Processed Image" class="AI_image">';
-            echo '</div>'; // 이 부분을 닫는 div 태그로 옮겼습니다.
+            echo '</div>'; //
         }
 
         // 결과 표시

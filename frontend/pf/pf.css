@@ -42,7 +42,7 @@ body::before {
     font-weight: bold; /* 현재 페이지에 해당하는 링크 강조 */
 }
 
-.numon{
+.paging a.num.on{
     background-color: white;
     color: black;
     font-weight: bold;

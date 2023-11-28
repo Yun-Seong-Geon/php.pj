@@ -22,3 +22,9 @@ body::before {
     z-index: -1;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1)); /* 그라데이션 */
 }
+
+.upload_btn {
+    margin-left: 90%;
+    margin-bottom: 5%;
+    color: rgb(220, 157, 0); 
+}

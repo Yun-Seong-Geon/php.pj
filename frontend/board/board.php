@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 // 현재 페이지 번호 확인
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$perPage = 10; // 페이지당 게시글 수
+$perPage = 1; // 페이지당 게시글 수
 
 // 전체 게시글 수 조회
 $totalSql = "SELECT COUNT(*) AS total FROM posts";
@@ -99,7 +99,7 @@ $seqNum = ($page - 1) * $perPage + 1;
                 <?php endif; ?>
 
                 <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                    <a href="?page=<?php echo $i; ?>" class="num <?php echo ($i == $page) ? 'on' : ''; ?>"><?php echo $i; ?></a>
+                    <a href="?page=<?php echo $i; ?>" class= "num <?php echo ($i == $page) ? 'on' : ''; ?>"><?php echo $i; ?></a>
                 <?php endfor; ?>
 
                 <?php if ($page < $totalPages): ?>

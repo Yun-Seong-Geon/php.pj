@@ -25,9 +25,8 @@ body::before {
 
 .notice_text{
     color: white;
-    margin-top: 150px;
     font-size: 80px;
-    margin-left: 150px;
+    margin-left: 10%;
     margin-bottom: 20px;
 }
 
