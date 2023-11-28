@@ -133,10 +133,6 @@ body{
     display: flex;
     justify-content: space-between;
 }
-#header .right_icons > div{
-
-}
-
 
 
 #main_container{
@@ -309,7 +305,8 @@ body{
 }
 
 .contents .comment_field .upload_btn{
-    color:#3897f0;
+    color:#005cb1;
+    font-weight: bold;
     position: absolute;
     right: 20px;
     top: 50%;

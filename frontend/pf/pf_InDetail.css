@@ -1,5 +1,5 @@
 .contents{
-    max-width:933px;
+    max-width: 933px;
     display: flex;
     border: 1px solid rgba(0,0,0,.0975);
     border-radius: 3px;
@@ -8,7 +8,7 @@
 
 .contents .img_section{
     overflow: hidden;
-    max-width: 598px;
+    max-width: 400px;
     border-right: 1px solid rgba(0,0,0,.0975);
 
 }
@@ -21,10 +21,13 @@
 .contents .img_section .trans_inner > div{
     width: 100%;
     display: inline-block;
+    max-width: 600px; /* 최대 너비 설정 */
+    max-height: 400px; /* 최대 높이 설정 */
+    /* overflow: hidden; 이미지가 너비/높이를 넘어가면 숨김 */
 }
 .contents .img_section .trans_inner img{
     width: 100%;
-    height: 100%;
+    height: auto; /* 이미지의 원래 비율 유지 */
 }
 .contents_box{
     display: flex;
@@ -34,10 +37,10 @@
 
 
 
-.user_container{
+/* .user_container{
     display: flex;
     align-items: center;
-}
+} */
 
 .user_container .profile_img{
     width: 32px;
@@ -127,13 +130,12 @@
 }
 
 .detail--right_box{
-    max-width:335px;
+    max-width:500px;
     width: 100%;
 }
 
 
 .detail--right_box .top{
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 13px 17px;
@@ -149,7 +151,7 @@
 
 .scroll_section{
     padding:12px 16px;
-    /*height: 240px;*/
+    height: 240px;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -215,6 +217,10 @@
     line-height:1.4;
     position: relative;
     width: 100%;
+    word-wrap: break-word; /* 단어가 너무 길면 줄바꿈 */
+    max-width: 200px; /* 댓글의 최대 너비 지정 */
+    white-space: normal; /* 공백과 줄바꿈이 텍스트에 그대로 반영됨 */
+    overflow-wrap: break-word; /* 긴 단어가 다음 줄로 넘어감 */
 }
 .scroll_section .comment .icon_wrap{
     position: absolute;
