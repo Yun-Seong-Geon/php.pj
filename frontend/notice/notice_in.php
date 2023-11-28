@@ -17,7 +17,8 @@ if ($conn->connect_error) {
 
 // URL에서 게시글 ID 가져오기
 $post_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-
+$updateViewsSql = "UPDATE notices SET views = views + 1 WHERE id = $post_id";
+$conn->query($updateViewsSql);
 // 게시글 상세 정보 조회
 $sql = "SELECT title, author, created_at, views, content FROM notices WHERE id = $post_id";
 $result = $conn->query($sql);
