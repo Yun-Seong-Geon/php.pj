@@ -19,22 +19,25 @@ if ($conn->connect_error) {
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $perPage = 10; // 페이지당 게시글 수
 
-// 전체 게시글 수 조회
-$totalSql = "SELECT COUNT(*) AS total FROM notices";
-$totalResult = $conn->query($totalSql);
-$totalRow = $totalResult->fetch_assoc();
-$totalPages = ceil($totalRow['total'] / $perPage);
+$searchInput = isset($_GET['search_input']) ? $_GET['search_input'] : '';
+// 검색 쿼리 실행 및 순번 계산
+if (!empty($searchInput)) {
+    $searchInput = $conn->real_escape_string($searchInput);
 
-// 페이지에 해당하는 게시글 조회
-$start = ($page - 1) * $perPage;
-$sql = "SELECT id, title, author, created_at, views FROM notices ORDER BY created_at DESC LIMIT $start, $perPage";
-$result = $conn->query($sql);
-$start = ($page - 1) * $perPage;
-$sql = "SELECT id, title, author, created_at, views FROM notices ORDER BY created_at DESC LIMIT $start, $perPage";
-$result = $conn->query($sql);
+    // 전체 검색 결과 수 확인
+    $totalSql = "SELECT COUNT(*) AS total FROM posts WHERE title LIKE '%$searchInput%'";
+    $totalResult = $conn->query($totalSql);
+    $totalRow = $totalResult->fetch_assoc();
+    $totalPages = ceil($totalRow['total'] / $perPage);
 
-// 순번 계산
-$seqNum = ($page - 1) * $perPage + 1;
+    // 페이지에 해당하는 검색 결과 조회
+    $start = ($page - 1) * $perPage;
+    $sql = "SELECT id, title, author, created_at, views FROM posts WHERE title LIKE '%$searchInput%' ORDER BY created_at DESC LIMIT $start, $perPage";
+    $result = $conn->query($sql);
+
+    // 순번 계산
+    $seqNum = ($page - 1) * $perPage + 1;
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,13 +45,13 @@ $seqNum = ($page - 1) * $perPage + 1;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="notice.css">
+    <link rel="stylesheet" href="board.css">
     
 </head>
 <body>
-    <h1 class="notice_text">공지사항</h1>
+    <h1 class="notice_text">게시판 검색결과</h1>
     <div class="notice_container">
-        <form action="../notice/notice-search.php" method="get" class="search_container">
+    <form action="../notice/notice-search.php" method="get" class="search_container">
             <select name="search_type" class="select_box">
                 <option value="title">제목</option>
             </select>
@@ -59,7 +62,6 @@ $seqNum = ($page - 1) * $perPage + 1;
                 <img src="../img/검색 아이콘.png" alt="검색" class="search-icon">
             </button>
         </form>
-
 
         <div class="board_list_wrap">
             <table class="board_list">
@@ -78,8 +80,8 @@ $seqNum = ($page - 1) * $perPage + 1;
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>" . $seqNum++ . "</td>";
-                            echo "<td class='tit'><a href='../notice/notice_in.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["title"]) . "</a></td>";
-                            echo "<td> 관리자 </td>";
+                            echo "<td class='tit'><a href='../board/board_in.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["title"]) . "</a></td>";
+                            echo "<td>". $row['author']. " </td>";
                             echo "<td>" . $row["created_at"] . "</td>";
                             echo "<td>" . $row["views"] . "</td>";
                             echo "</tr>";
@@ -87,9 +89,11 @@ $seqNum = ($page - 1) * $perPage + 1;
                     } else {
                         echo "<tr><td colspan='5'>게시글이 없습니다.</td></tr>";
                     }
-            ?>
+                ?>
                 </tbody>
             </table>
+
+
     
             <div class="paging">
                 <?php if ($page > 1): ?>
@@ -106,12 +110,26 @@ $seqNum = ($page - 1) * $perPage + 1;
                     <a href="?page=<?php echo $totalPages; ?>" class="bt">마지막 페이지</a>
                 <?php endif; ?>
             </div>
+            <div class="WriteButton_container">
+
+                <button onclick="checkLoginAndRedirect()">글쓰기</button>
+                <script>
+                function checkLoginAndRedirect() {
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        // 로그인 상태인 경우, board_write.php로 리디렉션
+                        window.location.href = '../board/board_write.php';
+                    <?php else: ?>
+                        // 로그인 상태가 아닌 경우, 로그인 페이지로 리디렉션
+                        window.location.href = '../login/login.php';
+                    <?php endif; ?>
+                }
+                </script>
+
+            </div>
         </div>
     </div>
-    </div>
+
     
 </body>
 </html>
-<?php
-    $conn->close();
-?>
+
