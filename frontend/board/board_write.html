@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="board_write.css">
+</head>
+
+<body>
+    <h1 class="notice_text">게시글 쓰기</h1>
+    <div class="notice_container">
+        <div class="board_wrap">
+            <form action="데이터 전송.php" method="post"> <!--TODO:php 연결-->
+                <div class="title_containter">
+                    <label for="title" class="font_a">제목</label> 
+                    <input id="title" name="title" class="title_input" type="text" placeholder="제목을 입력하세요." required><!--TODO:db 연결-->
+                </div>
+
+                <div class="name_container">
+                    <label for="name" class="font_a" style="margin-right: 26px;">이름</label> <!--TODO: db에서 닉네임 동적으로 연결-->
+                    <a>윤성건</a> <!--TODO: db에서 닉네임 동적으로 연결-->
+                </div>
+
+                <div class="content_container">
+                    <label for="content" class="font_a">내용</label>
+                </div>
+                <textarea id="content" name="content" class="text_box" rows="4" required></textarea><!--TODO:db 연결-->
+                
+                <button type="submit" class="subit_button">글쓰기</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
