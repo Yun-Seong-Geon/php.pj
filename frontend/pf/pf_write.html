@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pf_write.css">
+    <script src="pf_write.js"></script> 
+</head>
+<body>
+    <div id="main_container">
+
+        <div class="post_form_container">
+            <form action="#" class="post_form">
+                <div class="title">
+                    NEW POST
+                </div>
+                <div class="preview">
+                    <div class="upload">
+                        <div class="post_btn">
+                            <div class="plus_icon">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p>포스트 이미지 추가</p>
+                            <canvas id="imageCanvas"></canvas>
+                            <!--<p><img id="img_id" src="#" style="width: 300px; height: 300px; object-fit: cover" alt="thumbnail"></p>-->
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <input type="file" name="photo" id="id_photo" required="required">
+                </p>
+                <p>
+                    <textarea name="content" id="text_field" cols="50" rows="5" placeholder="나의 반려동물을 자랑해보세요!"></textarea>
+
+                </p>
+                <input class="submit_btn" type="submit" value="저장">
+            </form>
+
+        </div>
+</body>
+</html>
