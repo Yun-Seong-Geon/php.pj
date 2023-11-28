@@ -109,7 +109,7 @@ $seqNum = ($page - 1) * $perPage + 1;
             </div>
             <div class="WriteButton_container">
 
-                <button onclick="checkLoginAndRedirect()">글쓰기</button>
+                <button onclick="checkLoginAndRedirect()" class="board_write">글쓰기</button>
                 <script>
                 function checkLoginAndRedirect() {
                     <?php if (isset($_SESSION['user_id'])): ?>
