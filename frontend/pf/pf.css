@@ -45,10 +45,12 @@ body::before {
 .numon{
     background-color: white;
     color: black;
+    font-weight: bold;
 }
 
 .num{
     color:white;
+    font-weight: bold;
 }
 
 p{
@@ -69,6 +71,7 @@ p{
     font-size: 20px;
     padding: 10px 20px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .WriteButton_container{
