@@ -29,6 +29,12 @@ $totalPages = ceil($totalRow['total'] / $perPage);
 $start = ($page - 1) * $perPage;
 $sql = "SELECT id, title, author, created_at, views FROM notices ORDER BY created_at DESC LIMIT $start, $perPage";
 $result = $conn->query($sql);
+$start = ($page - 1) * $perPage;
+$sql = "SELECT id, title, author, created_at, views FROM notices ORDER BY created_at DESC LIMIT $start, $perPage";
+$result = $conn->query($sql);
+
+// 순번 계산
+$seqNum = ($page - 1) * $perPage + 1;
 ?>
 
 <!DOCTYPE html>
@@ -42,19 +48,18 @@ $result = $conn->query($sql);
 <body>
     <h1 class="notice_text">공지사항</h1>
     <div class="notice_container">
-        <div class="search_container">
-            <select class="select_box">
-                <option>제목</option>
-                <option>글쓴이</option>
+        <form action="../notice/notice_search.php" method="get" class="search_container">
+            <select name="search_type" class="select_box">
+                <option value="title">제목</option>
             </select>
 
-            <input class="select_box" type="text" name="search_input" placeholder="검색어를 입력하세요" style="width: 600px;"> <!--TODO:검색 input box php 연결해야함-->
+            <input class="select_box" type="text" name="search_input" placeholder="검색어를 입력하세요" style="width: 600px;">
 
-            <button type="button" class="search-button">
-                <img src="../img/검색 아이콘.png" alt="검색" class="search-icon"> <!--TODO:버튼 누르면 검색-->
+            <button type="submit" class="search-button">
+                <img src="../img/검색 아이콘.png" alt="검색" class="search-icon">
             </button>
+        </form>
 
-        </div>
 
         <div class="board_list_wrap">
             <table class="board_list">
@@ -72,8 +77,8 @@ $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td>" . $row["id"] . "</td>";
-                            echo "<td class='tit'><a href='post.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["title"]) . "</a></td>";
+                            echo "<td>" . $seqNum++ . "</td>";
+                            echo "<td class='tit'><a href='../notice/notice_in.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["title"]) . "</a></td>";
                             echo "<td> 관리자 </td>";
                             echo "<td>" . $row["created_at"] . "</td>";
                             echo "<td>" . $row["views"] . "</td>";
@@ -103,7 +108,7 @@ $result = $conn->query($sql);
             </div>
         </div>
     </div>
-
+    </div>
     
 </body>
 </html>

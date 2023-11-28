@@ -5,56 +5,73 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $servername = "localhost";
-$username = "root"; // 데이터베이스 사용자 이름
-$password = ""; // 데이터베이스 비밀번호
-$dbname = "petfolio"; // 데이터베이스 이름
+$username = "root";
+$password = "";
+$dbname = "petfolio";
 
-// 데이터베이스 연결
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// 연결 확인
 if ($conn->connect_error) {
     die("연결 실패: " . $conn->connect_error);
 }
 
-// 게시글 조회 쿼리
-$sql = "SELECT id, title, author, created_at, views FROM notices ORDER BY created_at DESC";
+// URL에서 게시글 ID 가져오기
+$post_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+// 게시글 상세 정보 조회
+$sql = "SELECT title, author, created_at, views, content FROM notices WHERE id = $post_id";
 $result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $title = htmlspecialchars($row['title']);
+    $author = htmlspecialchars($row['author']);
+    $date = $row['created_at'];
+    $views = $row['views'];
+    $content = nl2br(htmlspecialchars($row['content']));
+} else {
+    echo "게시글을 찾을 수 없습니다.";
+    exit;
+}
+$conn->close();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="notice.css">
-    
+    <link rel="stylesheet" href="notice_in.css">
 </head>
 <body>
     <h1 class="notice_text">공지사항</h1>
     <div class="notice_container">
-        <div class="search_container">
-            <select class="select_box">
-                <option>제목</option>
-                <option>글쓴이</option>
-            </select>
-
-            <input class="select_box" type="text" name="search_input" placeholder="검색어를 입력하세요" style="width: 600px;"> <!--TODO:검색 input box php 연결해야함-->
-
-            <button type="button" class="search-button">
-                <img src="../img/검색 아이콘.png" alt="검색" class="search-icon"> <!--TODO:버튼 누르면 검색-->
-            </button>
-
-        </div>
-
-            <div class="paging">
-                <a href="첫페이지로 이동" class="bt">첫번째 페이지</a>
-                <a href="1페이지" class="num on">1</a> <!--TODO:동적으로 받아야함-->
-                <a href="2페이지" class="num">2</a> <!--TODO:동적으로 받아야함-->
-                <a href="마지막 페이지로 이동" class="bt">마지막 페이지</a>
+        <div class="top-containter">
+            <h2 class="top-h2" style="margin-left: 20px;" ><?php echo $title; ?></h2>
+            <div class="top-h5">
+                <h5 class="top-text" style="display: inline;">등록인</h5>
+                <h5 style="display: inline;"><?php echo $author; ?></h5>
+                <h5 class="top-text" style="display: inline;">글번호</h5>
+                <h5 style="display: inline;"><?php echo $post_id; ?></h5>
+                <h5 class="top-text" style="display: inline;">작성일</h5>
+                <h5 style="display: inline;"><?php echo $date; ?></h5>
+                <h5 class="top-text" style="display: inline;">조회</h5>
+                <h5 style="display: inline;"><?php echo $views; ?></h5>
             </div>
         </div>
-    </div>
 
-    
+        <div class="text-container">
+            <div class="text_gap">
+                <?php echo $content; ?>
+            </div>
+        </div>
+
+        <!-- 다음/이전 글 이동 버튼 -->
+        <div class="next-page">
+            <a href="이전 글로 이동" class="bt">이전글</a>
+            <a href="../notice/notice.php" class="bt" style="padding: 10px 30px;">목록</a>
+            <a href="다음 글로 이동" class="bt">다음글</a>
+        </div>
+    </div>
 </body>
 </html>
