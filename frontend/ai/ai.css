@@ -94,3 +94,41 @@ body::before {
     text-align: center;
     margin-top: 70px;
 }
+
+.bt_container{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 36.3%;
+    gap: 14.3%;
+    text-align: center;
+}
+
+.submit_bt{
+    padding: 6px 30px;
+    border-radius: 8px;
+    color: white;
+    background-color: rgb(189, 56, 33);
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+    font-family: 'SKYBORI';
+}
+
+.re_bt{
+    padding: 9px 30px;
+    border-radius: 8px;
+    color: white;
+    background-color: rgb(189, 56, 33);
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+}
+
+.re_container{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 57.5%;
+}
+
+
