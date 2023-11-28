@@ -3,38 +3,68 @@
     src: url('../font/SKYBORI.ttf') format('opentype');
     
 }
+
 body{
-    font-family: 'SKYBORI' 
+    font-family: 'SKYBORI';
+    margin: 0;
+    padding: 0;
+    background: url('') center/cover no-repeat fixed;
+    
+}
+.top-image {
+    background-image: url('../img/img05.jpg');
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    z-index: -1;
+    position: relative;
+}
+    
+.top-image::before {
+    content: ""; /* 가상 요소의 내용은 비워둡니다 */
+    position: absolute; /* 가상 요소를 절대 위치로 설정 */
+    height: 800px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1)); /* 검은색 반투명 그라데이션 적용 */
+    z-index: 1; 
 }
 
-.Top_bar{
+
+h1 {
+    z-index: 2;
+    color:white;
+    position: relative;
+}
+
+.pf-overview, .ai-overview {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #dddddd;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cccccc;
+}
+
+form {
     display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.logo{
-    height: 60px;
-    width: 60px;
-    margin-right: 10px;
-}
-
-.Top_bar a{
-    text-decoration: none;
-    font-weight:bold;
-    color: rgb(21, 22, 22);
-    font-size: 40px;
-}
-
-.TopBar_middle{
+    flex-direction: column;
+    width: 200px;
     margin: auto;
 }
-.TopBar_middle a{
-    margin-right: 60px;
-}
 
-.TopBar_right a{
-    font-size: 25px;
-    margin-right: 25px;
+form input, form button {
+    margin-bottom: 10px;
 }
