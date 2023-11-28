@@ -11,41 +11,26 @@
 </head>
 
 <body>
-    <div class="Top_bar">
-        <a href="클릭시 메인페이지로 이동">
-            <img class="logo" src="../img/pf .png" alt="none">
-        </a>
-        
-        <div class="TopBar_middle">
-            <a href="클릭시 PF페이지로 이동">PF</a>
-            <a href="클릭시 게시판으로 이동">게시판</a>
-            <a href="클릭시 공지사항으로 이동">공지사항</a>
-            <a href="클릭시 AI 판별 페이지로 이동">AI</a>
-        </div>
-
-        <div class="TopBar_right">
-            <a href="클릭시 로그인 페이지로 이동">로그인</a>
-            <a href="클릭시 회원가입 페이지로 이동">회원가입</a>
-        </div>
-    </div>
-
     <h1 class="font_a">Species AI</h1>
-    <h3 class="font_b">나의 반려동물의 종을 판별해보세요!</h3> 
-    
+    <h3 class="font_b">나의 반려동물의 종을 판별해보세요!</h3>
+
     <div class="image_container">
-        <img src="../img/white.png" class="AI_image" id="AI_image" alt="이미지 없음"> <!--TODO:판별 후 이미지 동적으로 받아야함(판별 버튼 누르기 전까지는 하얀화면 유지, 현재 하얀색 화면 이미지 주소 들어가 있음)-->
+        <img src="../img/white.png" class="AI_image" id="AI_image" alt="이미지 없음">
     </div>
+    <!--여기서 부터 분석 버튼에 대한 html(css수정했음)-->
+    <div class="bt_container">
+        <form name="ai_image" method="post">
+            <input type="file" id="input_image">
+        </form>
 
-    <h1 class="font_c">당신의 반려동물은 DOG 입니다.</h1> <!--TODO:판별 후 텍스트 동적으로 받아야함(판별전에는 텍스트가 없음)-->
-
-    <form action="ai판별후 이미지화면" name="ai_image" method="post" >
-        <button type="submit">분석</button>
-    </form>
-
-    <form name="ai_image"  method="post">
-        <input type="file" id="input_image">
-    </form>
-    
+        <form action="ai판별후 이미지화면" name="ai_image" method="post">
+            <button type="submit" class="submit_bt">분석</button>
+        </form>
+    </div>
+    <!--TODO:여기서부터 동적으로 AI판별 후 받았을 때 다시 분석하기 버튼임 동적으로 받아서 사용-->
+    <!-- <div class="re_container">
+        <a href="../ai/ai.php" class="re_bt">다시하기</a>
+    </div> -->
 </body>
 
 </html>
