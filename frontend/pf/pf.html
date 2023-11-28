@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_pf.css">
     <link rel="stylesheet" href="pf.css">
 </head>
+
 <body>
 
     <div class="contents_box">
-        <p><span>P</span>et <span>F</span>olio</p>
+        <div class="pet_folio">
+            <p>Pet Folio</p>
+        </div>
         <article class="contents">
             <header class="top">
                 <div class="user_container">
@@ -39,7 +43,7 @@
             </div>
 
             <div class="likes m_text">
-                조회수 
+                조회수
                 <span id="like-count-39">2,346</span><!--TODO:동적으로 받아야함-->
                 &nbsp&nbsp&nbsp댓글수
                 <span id="like-count-39">12</span><!--TODO:동적으로 받아야함-->
@@ -210,11 +214,15 @@
             </div>
 
             <div class="comment_field" id="add-comment-post37">
-                <a href="pf_in.php" class="upload_btn m_text" data-name="comment">자세히보기</a><!--TODO:php로 pf-in 페이지로 연결-->
+                <a href="pf_in.php" class="upload_btn m_text"
+                    data-name="comment">자세히보기</a><!--TODO:php로 pf-in 페이지로 연결-->
             </div>
         </article>
 
-        
+        <div class="WriteButton_container">
+            <a href="pf_write.php" class="board_write">글쓰기</a><!--TODO:php 연결-->
+        </div>
+
         <div class="paging">
             <a href="1페이지" class="numon">1</a> <!--TODO:동적으로 받아야함 해당페이지-->
             <a href="2페이지" class="num">2</a> <!--TODO:동적으로 받아야함 해당 페이지가 아닐시-->
@@ -227,6 +235,7 @@
 
 
 
-    
+
 </body>
+
 </html>

@@ -1,5 +1,3 @@
-
-
 .contents{
     max-width:933px;
     display: flex;
@@ -28,6 +26,11 @@
     width: 100%;
     height: 100%;
 }
+.contents_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -51,11 +54,15 @@
 
 .user_container .user_name{
     color:#262626;
+    display: flex;
+    justify-content: space-between;
+    gap: 130px;
 }
 .user_container .nick_name{
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
+    
 }
 
 
@@ -82,6 +89,11 @@
     transform:scale(1);
 
 
+}
+.delete_text{
+    margin-right: auto 0;
+    color:red;
+    text-decoration: none;
 }
 
 .top .more_detail > li{

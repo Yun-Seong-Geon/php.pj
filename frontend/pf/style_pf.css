@@ -143,6 +143,7 @@ body{
     padding-top: 130px;
     display: flex;
     justify-content: center;
+    align-items: center; /* 추가: 수직 가운데 정렬 */ 
 }
 
 #main_container .inner{
@@ -153,17 +154,13 @@ body{
 
 }
 
-.contents_box{
-
-}
-
-
 .contents{
     max-width: 614px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 3px;
-    margin-bottom: 60px;
     background: white;
+    margin: 0 auto;
+    margin-bottom: 60px;
 }
 
 
@@ -492,7 +489,9 @@ body{
         flex-direction: column;
         align-items: center;
         margin-top: 3000px;
+        justify-content: center;
     }
+
     .side_box{
         display: none;
     }
