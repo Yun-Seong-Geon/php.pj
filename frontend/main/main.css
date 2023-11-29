@@ -59,6 +59,7 @@ h2{
     font-size: 35px;
     margin-top: 0px;
     color: white;
+    animation: scaleAndFadeIn 1.5s ease-in-out;
 }
 
 .pf_content{
@@ -88,7 +89,8 @@ h2{
 }
 
 .pf-overview {
-    text-align: center; 
+    text-align: center;
+    animation: scaleAndFadeIn 1s ease-in-out;
 }
 
 .ai-overview{
