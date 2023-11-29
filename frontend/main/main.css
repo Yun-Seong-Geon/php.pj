@@ -35,7 +35,7 @@ body{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1)); /* 검은색 반투명 그라데이션 적용 */
 }
 .top_bar{
-    margin-top: 0px;
+    margin-top: -5px;
 }
 
 .top{

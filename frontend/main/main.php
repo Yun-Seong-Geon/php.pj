@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +10,9 @@
 
 </head>
 
-<body class="main-page">
+<body>
+
+    <header>
     <div class="top-image">
         <div class="top">
             <?php
@@ -18,24 +21,43 @@
             <h1>내 애완동물을 소개하세요.</h1>
         </div>
     </div>
+    </header>
+    <main>
+        <section class="pf-overview">
+            <h2>PF Overview</h2>
+            <p class="pf_text">내 반려동물을 소개해보세요!</p>
 
-    <section class="pf-overview">
-        <h2>PF Overview</h2>
-        <h3>내 반려동물을 소개해보세요!</h3>
+            <div class="image-container">
+                <img src="../img/petfolio.png" alt="반려동물 이미지" class="overview_img">
+                <p class="pf_content">PF는 PET FOLIO의 약자입니다.<br> 여러분의 반려동물을 자랑하고 <br>더욱 깊어진 유대감을 경험하세요!</p>
+            </div>
 
-        <p>PF는 PET FOLIO의 약자입니다. 애완동물 포트폴리오를 관리하고 다양한 애완동물 관련 정보를 확인하세요.</p>
-    </section>
-    <section class="ai-overview">
-        <h2>AI Overview</h2>
-        <p>내 반려동물을 분석해보세요!</p>
-        <!-- 분류 버튼 -->
-        <div class="classification-buttons">
-            <button>cat</button>
-            <button>dog</button>
-            <button>wild</button>
-        </div>
-    </section>
-    </div>
+            <div class="text_container">
+
+            </div>
+        </section>
+
+        <section class="ai-overview">
+            <h2>AI Overview</h2>
+            <p class="pf_text">내 반려동물을 분석해보세요!</p>
+
+            <div class="classification-buttons">
+                <div class="classification-button">
+                    <img src="../img/img04.jpg" alt="cat">
+                    <p>cat</p>
+                </div>
+                <div class="classification-button">
+                    <img src="../img/img04.jpg" alt="dog">
+                    <p>dog</p>
+                </div>
+                <div class="classification-button">
+                    <img src="../img/img04.jpg" alt="wild">
+                    <p>wild</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
 
 </body>
 
