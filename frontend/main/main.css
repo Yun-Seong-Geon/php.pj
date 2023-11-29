@@ -9,6 +9,7 @@ body{
     margin: 0 0;
     padding: 0;
     background: url('') center/cover no-repeat fixed;
+    
 }
 .top-image {
     background-image: url('../img/img05.jpg');
@@ -36,10 +37,21 @@ body{
 .top_bar{
     margin-top: 0px;
 }
+
 .top{
     z-index: 1;
     color:white;
     position: relative;
+}
+
+h2{
+    font-size: 100px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.pf_text{
+    font-size: 70px;
 }
 
 .pf-overview, .ai-overview {
