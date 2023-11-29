@@ -31,7 +31,7 @@ if (isset($_POST['delete_post']) && isset($_POST['post_id'])) {
     $stmt->execute();
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
-        
+
         if ($row['author'] == $_SESSION['user_name']) {
             // 게시글 삭제 쿼리 실행
             $deleteQuery = "DELETE FROM pf WHERE id = ?";
@@ -46,7 +46,8 @@ if (isset($_POST['delete_post']) && isset($_POST['post_id'])) {
             }
             $deleteStmt->close();
         } else {
-            header("Location: ../pf/pf.php?status=unauthorized");
+            header("Location: ../pf/pf_in.php?post_id= " . $post_id . "&status=unauthorized");
+
         }
     } else {
         header("Location: ../pf/pf.php?status=notfound");

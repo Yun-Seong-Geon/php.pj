@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$perPage = 1; // 페이지당 게시글 수
+$perPage = 3; // 페이지당 게시글 수
 
 // 전체 게시글 수 조회
 $totalSql = "SELECT COUNT(*) AS total FROM pf";
@@ -38,7 +38,6 @@ $results = $conn->query($sql);
 </head>
 
 <body>
-
     <div class="contents_box">
         <div class="pet_folio">
             <p>Pet Folio</p>
