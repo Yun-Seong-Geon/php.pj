@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../topbar/topbar.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -8,6 +9,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "petfolio";
+$user_nickname = $_SESSION['user_name'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -69,9 +71,14 @@ $conn->close();
                 <?php echo $content; ?>
             </div>
         </div>
-
-        <div class="UpateButton_container">
-            <a href="../board_update.php" class="board_update">수정하기</a><!--TODO:php 연결-->
+        <div class="UpdateButton_container">
+        <?php
+            if ($user_nickname == $author) {
+                // 사용자가 게시물의 작성자인 경우 수정 링크 표시
+                echo '
+                        <a href="../board/board_update.php? id= '.$post_id. '" class="board_update">수정하기</a>';
+                } else {
+                }?>
         </div>
 
         <div class="next-page">
