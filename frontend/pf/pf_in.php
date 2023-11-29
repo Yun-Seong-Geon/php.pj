@@ -62,6 +62,16 @@ $conn->close();
 </head>
 
 <body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var status = urlParams.get('status');
+
+        if (status === 'unauthorized') {
+            alert('해당 게시물을 작성한 작성자만 게시물을 삭제할 수 있습니다.');
+        }
+    });
+</script>
     <section id="container">
         <div id="main_container">
 
@@ -84,10 +94,9 @@ $conn->close();
                                 <div class="user_container">
                                     <div class="user_name">
                                     <div class="nick_name"><?php echo $author; ?></div>
-                                    <form  id = "delete_pf"action="../pf/pf_in_process.php" method = "post">
+                                    <form  id = "delete_pf" action="../pf/pf_in_process.php" method = "post">
                                         <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                                        <a href="#" name = 'delete_post' onclick= "deletePost()" class="delete_text">게시물 삭제</a>
-                    
+                                            <button  name = 'delete_post' onclick= "deletePost()" class="delete_text">게시물 삭제</button>
                                     </form>
                                     <script>
                                                 function deletePost() {
