@@ -72,6 +72,10 @@ $conn->close();
         }
     });
 </script>
+<script>
+    // PHP로부터 로그인 상태를 JavaScript 변수에 할당
+    var isLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+</script>
     <section id="container">
         <div id="main_container">
 
@@ -158,8 +162,18 @@ $conn->close();
                                 <div class="commit_field">
                                     <input type= "text" class = "input_margin" placeholder= "댓글달기.." name= "content">
                                     </div>
-                                    <div class="upload_btn" onclick="document.getElementById('commentForm').submit();">게시</div>
-                                    
+                                    <div class="upload_btn" onclick="commentPost();">게시</div>
+                                    <script>
+                                        function commentPost() {
+                                            if (isLoggedIn) {
+                                                // 로그인 상태인 경우, 폼 제출
+                                                document.getElementById('commentForm').submit();
+                                            } else {
+                                                // 로그인 상태가 아닌 경우, 로그인 페이지로 리디렉션
+                                                window.location.href = '../login/login.php';
+                                            }
+                                        }
+                                    </script>
                             </form>
                         </div>
                     </article>
