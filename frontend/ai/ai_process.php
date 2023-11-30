@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
     header("Location: ../ai/ai.php");
     exit();
 } else {
-    header("Location: ../path/to/your/form_page.php");
     exit();
 }
 ?>
