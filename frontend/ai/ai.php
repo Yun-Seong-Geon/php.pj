@@ -12,7 +12,6 @@
     <h3 class="font_b">나의 반려동물의 종을 판별해보세요!</h3>
 
     <?php
-    session_start();
 
     // 결과가 세션에 저장되어 있는지 확인
     if (isset($_SESSION['prediction_result'])) {

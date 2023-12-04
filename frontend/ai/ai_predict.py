@@ -11,7 +11,7 @@ from keras.models import load_model
 
 app = FastAPI()
 
-os.environ["TFHUB_MODEL_LOAD_FORMAT"] = "UNCOMPRESSED"
+# os.environ["TFHUB_MODEL_LOAD_FORMAT"] = "UNCOMPRESSED"
 
 FILE_ID = "1MN_hfzw78DVWT0JSPauIVLlzy7L4Wr2R"
 MODEL_PATH = 'model.h5'
