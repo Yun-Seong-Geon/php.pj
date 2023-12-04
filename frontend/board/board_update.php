@@ -46,7 +46,7 @@ $conn->close();
     <h1 class="notice_text">게시글 수정</h1>
     <div class="notice_container">
         <div class="board_wrap">
-
+        <!--<button  name = 'delete_post' class="delete_text">게시물 삭제</button>--><!--TODO 게시판 삭제 버튼 추가함-->
             <form action="../board/board_update_process.php" method="post">
                 <div class="title_containter">
                     <label for="title" class="font_a">제목</label> 
@@ -63,8 +63,26 @@ $conn->close();
                 </div>
                 <textarea id="content" name="content" class="text_box" rows="4" required><?php echo $content; ?></textarea>
                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                <button type="submit" class="submit_button">수정</button>
+                <div class = "bt_container">
+                    <button type="submit" class="submit_button">수정</button>
+                </div>
             </form>
+            <form id="delete_board" class="deletePost" action="../board/board_delete.php" method="post">
+                <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
+                <div class="bt_container1">
+                    <!-- 삭제 버튼 클릭 시 deletePost() 함수 호출 -->
+                    <button class="submit_button1" type="button" onclick="deletePost()">삭제</button>
+                </div>
+        </form>
+        <script>
+                function deletePost() {
+                    var result = confirm('게시물을 삭제하시겠습니까?');
+                    if (result) {
+                        // form을 직접 submit
+                        document.getElementById('delete_board').submit();
+                    }
+                }
+            </script>
         </div>
     </div>
 </body>

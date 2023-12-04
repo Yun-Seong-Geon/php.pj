@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 // 현재 페이지 번호 확인
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$perPage = 1; // 페이지당 게시글 수
+$perPage = 5; // 페이지당 게시글 수
 
 // 전체 게시글 수 조회
 $totalSql = "SELECT COUNT(*) AS total FROM posts";

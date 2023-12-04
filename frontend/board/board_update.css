@@ -28,14 +28,14 @@ body::before {
     color: white;
     margin-top: 150px;
     font-size: 80px;
-    margin-left: 545px;
+    margin-left: 580px;
     margin-bottom: 20px;
 }
 
 .notice_container {
     background-color: rgb(235, 235, 235);
     width: 700px;
-    height: 550px;
+    height: 600px;
     margin: auto;
     margin-bottom: 130px;
     padding: 25px;
@@ -84,6 +84,28 @@ body::before {
     font-weight: bold;
     background-color: rgb(138, 138, 138);
     color:rgb(255, 255, 255);
-    margin-top: 17px;
     margin-left: 90.3%;
+}
+.submit_button1{
+    border-radius: 17px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(138, 138, 138);
+    color:rgb(255, 0, 0);
+    margin-left: 90.3%;
+    margin-top: 5px;
+}
+
+
+
+.delete_text{
+    background: none; /* 배경색 제거 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    border: none; /* 테두리 제거 */
+    margin-left: 89%;
+    margin-bottom: 2%;
+    color:red;
+    text-decoration: none;
 }

@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['photo']) && $_FILES['
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
-            $errorMsg = "게시글이 성공적으로 등록되었습니다.";
+            header("Location: ../pf/pf.php");
         } 
         else {
             $errorMsg = "오류: " . $conn->error;

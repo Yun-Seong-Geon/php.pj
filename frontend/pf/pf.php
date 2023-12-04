@@ -45,7 +45,7 @@ $results = $conn->query($sql);
             <?php
     if ($results->num_rows > 0) {
         while ($row = $results->fetch_assoc()) {
-            $title = htmlspecialchars($row['title']);
+            $author = htmlspecialchars($row['author']);
             $imagePath = $row['image_path'];
             $likes = $row['views']; // 예시 데이터 필드
             $comments = $row['content']; // 예시 데이터 필드
@@ -56,7 +56,7 @@ $results = $conn->query($sql);
                 <header class="top">
                     <div class="user_container">
                         <div class="user_name">
-                            <div class="nick_name m_text"><?php echo $title; ?></div>
+                            <div class="nick_name m_text"><?php echo $author; ?></div>
                         </div>
                     </div>
                 </header>
@@ -71,7 +71,7 @@ $results = $conn->query($sql);
 
                 <div class="likes m_text">
                     조회수 <span><?php echo $likes; ?></span>
-                    &nbsp;&nbsp;&nbsp;댓글수 <span><?php echo $comments; ?></span>
+                    &nbsp;&nbsp;&nbsp; <span><?php echo $comments; ?></span>
                 </div>
 
                 <div class="comment_field">

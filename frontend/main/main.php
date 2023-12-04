@@ -1,6 +1,3 @@
-<?php
-            include '../topbar/topbar.php';
-            ?>
 <!DOCTYPE html>
 <html>
 
@@ -17,8 +14,10 @@
     <header>
 
         <div class="top-image">
-
             <div class="top_text">
+            <?php
+            include '../topbar/topbar.php';
+            ?>
                 <h1>Introduce My Best Freinds in PF</h1>
             </div>
         </div>
@@ -60,7 +59,7 @@
 
                 </div>
                 <div class="bt_container">
-                    <a href="ai.php" class="ai_bt">분석</a>
+                    <a href="../ai/ai.php" class="ai_bt">분석</a>
                 </div>
             </section>
     </div>
